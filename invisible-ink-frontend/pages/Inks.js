@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import ChatBox from "../components/ChatBox";
 import axios from "axios";
-import { Tabs, TabPane, Button, Select, Input } from "antd";
+import { Tabs, TabPane, Button, Select, Input, Modal } from "antd";
 
 class Inks extends Component {
   static async getInitialProps({ store }) {
@@ -26,7 +26,8 @@ class Inks extends Component {
     inks: [],
     school: "",
     schoolInput: "",
-    schools: []
+    schools: [],
+    visible: false
   };
 
   async componentDidMount() {
@@ -159,18 +160,26 @@ class Inks extends Component {
               key={-1}
               disabled
               tab={
-                <div
-                  style={{
-                    width: "15vw",
-                    padding: "0.5vw",
-                    overflowWrap: "normal",
-                    whiteSpace: "normal"
-                  }}
-                >
-                  <Button style={{ margin: "5%", width: "90%" }} type="primary">
-                    Create New Ink
-                  </Button>
-                </div>
+                this.props.user.administrator ? null : (
+                  <div
+                    style={{
+                      width: "15vw",
+                      padding: "0.5vw",
+                      overflowWrap: "normal",
+                      whiteSpace: "normal"
+                    }}
+                  >
+                    <Button
+                      style={{ margin: "5%", width: "90%" }}
+                      type="primary"
+                      onClick={() => {
+                        this.setState({ visible: true });
+                      }}
+                    >
+                      Create New Ink
+                    </Button>
+                  </div>
+                )
               }
             >
               <h1
@@ -185,6 +194,36 @@ class Inks extends Component {
             </TabPane>
           </Tabs>
         </div>
+
+        <Modal
+          title="Create Ink"
+          visible={this.state.visible}
+          onOk={() => {}}
+          onCancel={() => {
+            this.setState({ visible: false });
+          }}
+        >
+          <Input
+            style={{ width: "200px" }}
+            onChange={event =>
+              this.setState({ schoolInput: event.target.value })
+            }
+          >
+            {" "}
+          </Input>{" "}
+          <Input
+            style={{ width: "200px" }}
+            onChange={event =>
+              this.setState({ schoolInput: event.target.value })
+            }
+          ></Input>{" "}
+          <Input
+            style={{ width: "200px" }}
+            onChange={event =>
+              this.setState({ schoolInput: event.target.value })
+            }
+          ></Input>
+        </Modal>
       </div>
     );
   }
