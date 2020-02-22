@@ -7,11 +7,11 @@ class Cases extends Component {
     static async getInitialProps({ store }) {
         const inks = [
             {
-                title: 'ink 1',
+                0: 'ink 1',
                 messsage: messageSample
             },
             {
-                title: 'ink 2',
+                0: 'ink 2',
                 message: messageSample
             }
         ];
@@ -20,14 +20,16 @@ class Cases extends Component {
 
     state = {
         text: '',
-        highlighted: ''
+        highlighted: '-1'
     };
 
-    handleSubmit = () => {};
+    handleSubmit = () => {
+        console.log('handling submit');
+    };
 
     renderInk() {
         return (
-            <div style={{ width: '100%', height: '100%', backgroundColor: 'yellow' }}>
+            <div style={{ width: '70vw', height: '100%' }}>
                 <h2> What's Wrong?</h2>
                 <ChatBox
                     messages={messageSample}
@@ -81,6 +83,7 @@ class Cases extends Component {
                             : null}
                         <TabPane
                             key={-1}
+                            disabled
                             tab={
                                 <div
                                     style={{
@@ -103,7 +106,7 @@ class Cases extends Component {
                                     marginTop: '1.5vw'
                                 }}
                             >
-                                No Cases Found
+                                Select an Ink
                             </h1>
                         </TabPane>
                     </Tabs>

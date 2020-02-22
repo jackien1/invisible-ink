@@ -11,7 +11,7 @@ class ChatBox extends Component {
                         borderRadius: '20px',
                         height: '50vh',
                         overflowX: 'scroll',
-                        backgroundColor: 'blue'
+                        backgroundColor: '#F2F2F2'
                     }}
                     ref={div => {
                         this.messageList = div;
@@ -34,8 +34,8 @@ class ChatBox extends Component {
                                     style={{
                                         backgroundColor:
                                             message[0].toLowerCase() == this.props.address
-                                                ? '#10004e'
-                                                : '#EEEEEE',
+                                                ? '#ff8282'
+                                                : '#C2C2C2',
                                         color:
                                             message[0].toLowerCase() == this.props.address
                                                 ? '#FFFFFF'
@@ -63,7 +63,7 @@ class ChatBox extends Component {
                 >
                     <Input
                         placeholder="Enter Message"
-                        onChange={event => this.changeInput(event)}
+                        onChange={event => this.props.changeInput(event)}
                     />
                     <Button onClick={this.props.handleSubmit}>Submit</Button>
                 </div>
