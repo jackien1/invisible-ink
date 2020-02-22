@@ -20,11 +20,11 @@ const User = new mongoose.Schema({
   },
   privateKey: {
     type: String,
-    require: true
+    required: true
   },
   code: {
     type: String,
-    require: true
+    required: true
   },
   date: {
     type: Date,
