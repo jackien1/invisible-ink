@@ -13,20 +13,6 @@ import '../styles.less';
 const MUST_LOG_IN = [''];
 
 class Toolbar extends Component {
-    // updateUsers = async () => {
-    //     try {
-    //         axios.defaults.headers.common['Authorization'] = localStorage.getItem('jwtToken');
-    //         const { data } = await axios({
-    //             method: 'get',
-    //             url: `${process.env.SERVER_URL}/api/auth/getUser`,
-    //             data: {
-    //                 id: this.props.user.id
-    //             }
-    //         });
-    //         this.props.setCurrentUser(data);
-    //     } catch (e) {}
-    // };
-
     componentDidMount() {
         if (!this.props.isAuthenticated && MUST_LOG_IN.includes(this.props.page)) {
             Router.push('/notloggedin');
