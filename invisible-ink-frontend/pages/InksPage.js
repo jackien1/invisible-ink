@@ -4,6 +4,7 @@ import ChatBox from '../components/ChatBox';
 import axios from 'axios';
 import { Tabs, Radio, Button, Select, Input, Modal } from 'antd';
 import * as types from '../redux/types';
+import { Router } from '../routes';
 
 class Inks extends Component {
     static async getInitialProps({ store }) {
@@ -21,7 +22,8 @@ class Inks extends Component {
         visible: false,
         title: '',
         description: '',
-        allInks: []
+        allInks: [],
+        messageLoading: false
     };
 
     async componentDidMount() {
@@ -78,6 +80,7 @@ class Inks extends Component {
                     address={this.props.user.address}
                     handleSubmit={this.handleSubmit}
                     changeInput={event => this.setState({ text: event.target.value })}
+                    loading={this.state.messageLoading}
                 />
             </div>
         );

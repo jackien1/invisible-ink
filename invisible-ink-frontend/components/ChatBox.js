@@ -71,7 +71,9 @@ class ChatBox extends Component {
                         placeholder="Enter Message"
                         onChange={event => this.props.changeInput(event)}
                     />
-                    <Button onClick={this.props.handleSubmit}>Submit</Button>
+                    <Button onClick={this.props.handleSubmit} loading={this.props.loading}>
+                        Submit
+                    </Button>
                 </div>
             </div>
         );
