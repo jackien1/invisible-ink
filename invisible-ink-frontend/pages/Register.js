@@ -34,7 +34,7 @@ class Register extends Component {
       email: this.state.email,
       password: this.state.password,
       password_confirm: this.state.confirmPassword,
-      schoolCode: this.state.schoolCode,
+      code: this.state.schoolCode,
       administrator: this.props.admin
     };
 

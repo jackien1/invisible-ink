@@ -19,7 +19,7 @@ export default withRedux(initStore)(
     }
 
     state = {
-      loading: false
+      loading: true
     };
 
     componentDidMount = () => {
@@ -32,20 +32,27 @@ export default withRedux(initStore)(
           window.location.href = "/";
         }
       }
+
       this.setState({ loading: false });
     };
 
     render() {
       const { Component, pageProps, store } = this.props;
       return (
-        <>
-          <Provider store={store}>
-            <React.Fragment>
-              <Toolbar />
-              <Component {...pageProps} />
-            </React.Fragment>
-          </Provider>
-        </>
+        <div>
+          {this.state.loading ? (
+            <div> Loading </div>
+          ) : (
+            <>
+              <Provider store={store}>
+                <React.Fragment>
+                  <Toolbar />
+                  <Component {...pageProps} />
+                </React.Fragment>
+              </Provider>
+            </>
+          )}
+        </div>
       );
     }
   }

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import ChatBox from "../components/ChatBox";
+import axios from "axios";
 import { Tabs, TabPane, Button } from "antd";
 
 class Inks extends Component {
@@ -20,8 +21,21 @@ class Inks extends Component {
 
   state = {
     text: "",
-    highlighted: "-1"
+    highlighted: "-1",
+    inks: []
   };
+
+  async componentDidMount() {
+    axios.defaults.headers.common["Authorization"] = localStorage.getItem(
+      "jwtToken"
+    );
+
+    const { data } = await axios({
+      method: "post",
+      url: `${process.env.SERVER_URL}/api/ink/myInks`,
+      data: { code: this.props.user.code }
+    });
+  }
 
   handleSubmit = () => {
     console.log("handling submit");
@@ -127,7 +141,12 @@ const messageSample = [
   }
 ];
 
+const mapStateToProps = state => {
+  const { user, isAuthenticated, error } = state.auth;
+  return { user, isAuthenticated, error };
+};
+
 export default connect(
-  null,
+  mapStateToProps,
   null
 )(Inks);

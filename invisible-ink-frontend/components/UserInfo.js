@@ -27,7 +27,6 @@ class PlayerInfo extends Component {
   };
 
   renderNotLoggedIn() {
-    console.log(this.props.error);
     return (
       <div
         style={{
