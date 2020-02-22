@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import ChatBox from "../components/ChatBox";
 import axios from "axios";
-import { Tabs, Radio, Button, Select, Input } from "antd";
+import { Tabs, Radio, Button, Select, Input, Modal } from "antd";
 
 class Inks extends Component {
   static async getInitialProps({ store }) {
@@ -45,7 +45,10 @@ class Inks extends Component {
     inks: [],
     school: "",
     schoolInput: "",
-    schools: []
+    schools: [],
+    visible: false,
+    title: "",
+    description: ""
   };
 
   async componentDidMount() {
@@ -60,15 +63,14 @@ class Inks extends Component {
         data: { code: this.props.user.code }
       });
 
-      this.setState({ inks: data });
+      this.setState({ inks: data.inks });
     } else {
       const { data } = await axios({
         method: "get",
         url: `${process.env.SERVER_URL}/api/ink/getSchools`
       });
 
-      this.setState({ schools: data });
-      console.log(data);
+      this.setState({ schools: data.schools });
     }
   }
 
@@ -214,18 +216,26 @@ class Inks extends Component {
               key={-1}
               disabled
               tab={
-                <div
-                  style={{
-                    width: "15vw",
-                    padding: "0.5vw",
-                    overflowWrap: "normal",
-                    whiteSpace: "normal"
-                  }}
-                >
-                  <Button style={{ margin: "5%", width: "90%" }} type="primary">
-                    Create New Ink
-                  </Button>
-                </div>
+                this.props.user.administrator ? null : (
+                  <div
+                    style={{
+                      width: "15vw",
+                      padding: "0.5vw",
+                      overflowWrap: "normal",
+                      whiteSpace: "normal"
+                    }}
+                  >
+                    <Button
+                      style={{ margin: "5%", width: "90%" }}
+                      type="primary"
+                      onClick={() => {
+                        this.setState({ visible: true });
+                      }}
+                    >
+                      Create New Ink
+                    </Button>
+                  </div>
+                )
               }
             >
               <h2
@@ -249,15 +259,41 @@ class Inks extends Component {
             </TabPane>
           </Tabs>
         </div>
-        <h1
-          style={{
-            textAlign: "center",
-            width: "100%",
-            marginTop: "1.5vw"
+        <Modal
+          title="Basic Modal"
+          visible={this.state.visible}
+          onOk={async () => {
+            axios.defaults.headers.common[
+              "Authorization"
+            ] = localStorage.getItem("jwtToken");
+
+            await axios({
+              method: "post",
+              url: `${process.env.SERVER_URL}/api/ink/createInk`,
+              data: {
+                title: this.state.title,
+                description: this.state.description,
+                code: this.props.user.code
+              }
+            });
+          }}
+          onCancel={() => {
+            this.setState({ visible: false });
           }}
         >
-          Select an Ink
-        </h1>
+          <Input
+            style={{ width: "200px" }}
+            placeholder="title"
+            onChange={event => this.setState({ title: event.target.value })}
+          ></Input>
+          <Input
+            placeholder="description"
+            style={{ width: "200px" }}
+            onChange={event =>
+              this.setState({ description: event.target.value })
+            }
+          ></Input>
+        </Modal>
       </div>
     );
   }
