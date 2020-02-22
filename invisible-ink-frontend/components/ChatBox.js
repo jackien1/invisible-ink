@@ -41,7 +41,7 @@ class ChatBox extends Component {
                                                 ? '#FFFFFF'
                                                 : '#212121',
                                         padding: '10px',
-                                        borderRadius: '1vw',
+                                        borderRadius: '10px',
                                         flexWrap: 'wrap',
                                         display: 'inline-block',
                                         maxWidth: '80vw'

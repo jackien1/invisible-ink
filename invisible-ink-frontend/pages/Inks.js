@@ -2,21 +2,41 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ChatBox from '../components/ChatBox';
 import axios from 'axios';
-import { Tabs, TabPane, Button, Select, Input } from 'antd';
+import { Tabs, Radio, Button, Select, Input } from 'antd';
 
 class Inks extends Component {
     static async getInitialProps({ store }) {
         const inks = [
             {
                 0: 'ink 1',
-                messsage: messageSample
+                1: 'description',
+                address: '0x456',
+
+                messages: messageSample
             },
             {
                 0: 'ink 2',
-                message: messageSample
+                1: 'description',
+                address: '0x456',
+                messages: messageSample
             }
         ];
-        const schools = ['Sage', 'Uni', 'etc...'];
+        const schools = [
+            {
+                0: 'New School',
+                1: '0x456',
+                address: 'something else',
+                email: 'student@gmail.com'
+            },
+            {
+                0: 'Uni',
+                1: '0x123',
+                address: 'something else',
+                email: 'student@gmail.com'
+            }
+        ];
+
+        return { inks, schools };
     }
     state = {
         text: '',
@@ -47,7 +67,23 @@ class Inks extends Component {
     renderInk() {
         return (
             <div style={{ width: '70vw', height: '100%' }}>
-                <h2> What's Wrong?</h2>
+                <div
+                    style={{
+                        display: 'flex',
+                        flexDirection: 'row',
+                        width: '100%',
+                        justifyContent: 'space-around',
+                        marginTop: '2vh'
+                    }}
+                >
+                    <h2> What's Wrong?</h2>
+                    <Radio.Group defaultValue="a">
+                        <Radio.Button value="a">Harassment</Radio.Button>
+                        <Radio.Button value="b">Physical Bullying</Radio.Button>
+                        <Radio.Button value="c">Cyberbulling</Radio.Button>
+                        <Radio.Button value="d">Other</Radio.Button>
+                    </Radio.Group>
+                </div>
                 <ChatBox
                     messages={messageSample}
                     address={123}
@@ -68,7 +104,10 @@ class Inks extends Component {
                     onChange={val => this.setState({ school: val })}
                 >
                     {this.props.schools.map(school => (
-                        <Option value={school}> {school}</Option>
+                        <Option value={school[1]} style={{ width: '290px' }}>
+                            {' '}
+                            {school[0]}
+                        </Option>
                     ))}
                 </Select>
                 <Input
@@ -85,42 +124,56 @@ class Inks extends Component {
     render() {
         const { TabPane } = Tabs;
         return (
-            <div style={{ width: '90vw', margin: '5vw' }}>
-                <h1 style={{ textAlign: 'center' }}> Inks </h1>
+            <div style={{ width: '90vw', margin: '3vw' }}>
+                <h1 style={{ textAlign: 'center' }}> My Inks </h1>
                 {this.props.user && this.props.user.administrator ? this.renderSchool() : null}
-                <div style={{ display: 'flex', flexDirection: 'row', width: '100%' }}>
+                <div
+                    style={{
+                        display: 'flex',
+                        flexDirection: 'row',
+                        width: '100%',
+                        marginTop: '3vw'
+                    }}
+                >
                     <Tabs
                         tabPosition="left"
                         onChange={key => this.setState({ highlighted: key })}
                         activeKey={this.state.highlighted}
                     >
                         {this.props.inks
-                            ? this.props.inks.map((object, index) => (
-                                  <TabPane
-                                      key={index}
-                                      tab={
-                                          <div
-                                              style={{
-                                                  width: '15vw',
-                                                  padding: '0.5vw',
-                                                  overflowWrap: 'normal',
-                                                  whiteSpace: 'normal'
-                                              }}
-                                          >
+                            ? this.props.inks
+                                  .filter(
+                                      object =>
+                                          //   !this.props.user.administrator ||
+                                          //   this.state.school == object.address
+                                          true
+                                  )
+                                  .map((object, index) => (
+                                      <TabPane
+                                          key={index}
+                                          tab={
                                               <div
                                                   style={{
-                                                      fontSize: '150%'
+                                                      width: '15vw',
+                                                      padding: '0.5vw',
+                                                      overflowWrap: 'normal',
+                                                      whiteSpace: 'normal'
                                                   }}
                                               >
-                                                  {object[0]}
+                                                  <div
+                                                      style={{
+                                                          fontSize: '150%'
+                                                      }}
+                                                  >
+                                                      {object[0]}
+                                                  </div>
                                               </div>
-                                          </div>
-                                      }
-                                  >
-                                      {this.renderInk(index)}
-                                      {console.log(object)}
-                                  </TabPane>
-                              ))
+                                          }
+                                      >
+                                          {this.renderInk(index)}
+                                          {console.log(object)}
+                                      </TabPane>
+                                  ))
                             : null}
                         <TabPane
                             key={-1}
@@ -140,15 +193,24 @@ class Inks extends Component {
                                 </div>
                             }
                         >
-                            <h1
+                            <h2
                                 style={{
                                     textAlign: 'center',
-                                    width: '100%',
-                                    marginTop: '1.5vw'
+                                    width: '60vw',
+                                    marginTop: '3vw'
                                 }}
                             >
-                                Select an Ink
-                            </h1>
+                                No Ink Selected
+                            </h2>
+                            <h4
+                                style={{
+                                    textAlign: 'center',
+                                    width: '60vw',
+                                    marginTop: '1vw'
+                                }}
+                            >
+                                Select an ink in the panel on the right
+                            </h4>
                         </TabPane>
                     </Tabs>
                 </div>
