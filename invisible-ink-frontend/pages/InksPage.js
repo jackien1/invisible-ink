@@ -270,7 +270,7 @@ class Inks extends Component {
                     </Tabs>
                 </div>
                 <Modal
-                    title="Basic Modal"
+                    title="Create New Ink"
                     visible={this.state.visible}
                     onOk={async () => {
                         axios.defaults.headers.common['Authorization'] = localStorage.getItem(
@@ -291,16 +291,25 @@ class Inks extends Component {
                         this.setState({ visible: false });
                     }}
                 >
-                    <Input
-                        style={{ width: '200px' }}
-                        placeholder="title"
-                        onChange={event => this.setState({ title: event.target.value })}
-                    ></Input>
-                    <Input
-                        placeholder="description"
-                        style={{ width: '200px' }}
-                        onChange={event => this.setState({ description: event.target.value })}
-                    ></Input>
+                    <div
+                        style={{
+                            display: 'flex',
+                            flexDirection: 'column',
+                            alignItems: 'center',
+                            width: '100%'
+                        }}
+                    >
+                        <Input
+                            style={{ width: '300px' }}
+                            placeholder="Title"
+                            onChange={event => this.setState({ title: event.target.value })}
+                        ></Input>
+                        <Input
+                            placeholder="Description"
+                            style={{ width: '300px' }}
+                            onChange={event => this.setState({ description: event.target.value })}
+                        ></Input>
+                    </div>
                 </Modal>
             </div>
         );

@@ -63,7 +63,8 @@ class ChatBox extends Component {
                         width: '100%',
                         display: 'flex',
                         flexDirection: 'row',
-                        justifyContent: 'space-around'
+                        justifyContent: 'space-around',
+                        marginTop: '10px'
                     }}
                 >
                     <Input
