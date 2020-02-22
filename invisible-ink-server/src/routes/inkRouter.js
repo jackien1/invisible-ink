@@ -61,7 +61,7 @@ router.post(
   }
 );
 
-router.post("/getSchools", async (req, res) => {
+router.get("/getSchools", async (req, res) => {
   const privateKey = CryptoUtils.generatePrivateKey();
   const publicKey = CryptoUtils.publicKeyFromPrivateKey(privateKey);
   let address = LocalAddress.fromPublicKey(publicKey).toString();
@@ -86,9 +86,7 @@ router.post("/getSchools", async (req, res) => {
   );
 
   try {
-    let schools = await schoolManagerInstance.methods
-      .getDeployedSchools()
-      .call();
+    let schools = await schoolManagerInstance.methods.returnSchools().call();
 
     const result = await schools.map(async school => {
       const contract = new web3.eth.Contract(School.abi, school);
@@ -134,7 +132,46 @@ router.post(
     let schoolInstance = new web3.eth.Contract(School.abi, req.body.code);
 
     try {
-      await contract.methods.sendMessage(req.body.text).send({
+      await schoolInstance.methods
+        .createInk(req.body.title, req.body.description)
+        .send({
+          from: user.address
+        });
+
+      res.status(201).json({
+        success: true
+      });
+    } catch (e) {
+      console.log(e);
+      res.status(404);
+    }
+  }
+);
+
+router.post(
+  "/sendMessage",
+  passport.authenticate("jwt", { session: false }),
+  async (req, res) => {
+    const user = await User.findOne({ email: req.user.email });
+    const privateKey = new Uint8Array(JSON.parse("[" + user.privateKey + "]"));
+    const publicKey = CryptoUtils.publicKeyFromPrivateKey(privateKey);
+
+    let client = new Client(
+      "extdev-plasma-us1",
+      "wss://extdev-plasma-us1.dappchains.com/websocket",
+      "wss://extdev-plasma-us1.dappchains.com/queryws"
+    );
+
+    client.txMiddleware = [
+      new NonceTxMiddleware(publicKey, client),
+      new SignedTxMiddleware(privateKey)
+    ];
+
+    let web3 = new Web3(new LoomProvider(client, privateKey));
+    let inkInstance = new web3.eth.Contract(Ink.abi, req.body.ink);
+
+    try {
+      await inkInstance.methods.sendMessage(req.body.text).send({
         from: user.address
       });
 
