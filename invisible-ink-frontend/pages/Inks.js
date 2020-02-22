@@ -48,7 +48,8 @@ class Inks extends Component {
     schools: [],
     visible: false,
     title: "",
-    description: ""
+    description: "",
+    allInks: []
   };
 
   async componentDidMount() {
@@ -70,7 +71,12 @@ class Inks extends Component {
         url: `${process.env.SERVER_URL}/api/ink/getSchools`
       });
 
-      this.setState({ schools: data.schools });
+      const res = await axios({
+        method: "get",
+        url: `${process.env.SERVER_URL}/api/ink/allInks`
+      });
+
+      this.setState({ schools: data.schools, allInks: res.data.inks });
     }
   }
 
