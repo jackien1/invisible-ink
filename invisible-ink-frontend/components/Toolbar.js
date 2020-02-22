@@ -137,12 +137,8 @@ class Toolbar extends Component {
                                     flexDirection: 'row'
                                 }}
                             >
-                                {this.props.user.userType === 1
-                                    ? this.renderLink('Explore', 'e', 'search', '/explore')
-                                    : null}
-
-                                {this.props.user.userType === 1 || this.props.user.userType === 0
-                                    ? this.renderLink('My Cases', 'c', 'copy', '/cases')
+                                {this.props.isAuthenticated
+                                    ? this.renderLink('My Inks', 'c', 'copy', '/inks')
                                     : null}
 
                                 {this.renderLink('FAQ', 'q', 'question-circle', '/faq')}
