@@ -3,5 +3,4 @@ module.exports = routes()
     .add('/', 'index')
     .add('/register/:type', 'Register')
     .add('/faq', 'FAQPage')
-    .add('/inks', 'Inks')
-    .add('/case', 'Case');
+    .add('/inks', 'InksPage');

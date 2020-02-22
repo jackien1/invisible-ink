@@ -44,13 +44,21 @@ class HomePage extends Component {
                     <div style={{ width: '60vw', paddingLeft: '8vw', marginRight: '5vw' }}>
                         <h1 style={{ color: '#FF8282' }}> Our Mission</h1>
                         <div style={{ fontSize: '130%' }}>
-                            Every year, the United States falsely incarcerates thousands of people
-                            who cannot afford quality legal representation. Meanwhile, unemployment
-                            for lawyers is almost three times higher than the national unemployment
-                            rate and rising fast. Through FairLegal, clients can find high-quality,
-                            low cost legal advice and representation by posting their cases. In
-                            return, young and otherwise unemployed lawyers gain experience and a
-                            source of income.
+                            Between 1 in 4 and 1 in 3 U.S. students reported to have been bullied at
+                            school. Most bullying happens in middle school. The most common types
+                            are verbal and social bullying. There is not a single profile of a young
+                            person involved in bullying. Youth who bully can be either well
+                            connected socially or marginalized, and may be bullied by others as
+                            well. Similarly, those who are bullied sometimes bully others. The most
+                            concerning statistic is that only about 20 to 30% of students who are
+                            bullied notify adults about the bullying.
+                            <br />
+                            <br />
+                            Invisible Ink utilizes blockchain to encrypt messages between an
+                            administrator and user. The identity of the user would not be
+                            accessible, but the exchange would be recorded. Invisible Ink would be
+                            beneficial to students who are too afraid to talk to an adult because it
+                            would protect their identity.
                         </div>
                     </div>
                     <div
@@ -61,7 +69,8 @@ class HomePage extends Component {
                             display: 'flex',
                             alignItems: 'center',
                             flexDirection: 'column',
-                            padding: '60px 15px 60px 15px'
+                            padding: '60px 15px 60px 15px',
+                            height: '60%'
                         }}
                     >
                         <h1 style={{ color: '#FFFFFF' }}>Get Started Today!</h1>
@@ -81,107 +90,6 @@ class HomePage extends Component {
                         </h4>
                     </div>
                 </div>
-                {/* <div
-                    style={{
-                        display: 'flex',
-                        flexDirection: 'column',
-                        width: '100%',
-                        justifyContent: 'space-around',
-                        backgroundImage: 'linear-gradient(to right, #0F004A , #2D3B8E)'
-                    }}
-                >
-                    <h1
-                        style={{
-                            textAlign: 'center',
-                            color: 'white',
-                            marginTop: '1em'
-                        }}
-                    >
-                        Why Us?
-                    </h1>
-                    <div
-                        style={{
-                            display: 'flex',
-                            flexDirection: 'row',
-                            justifyContent: 'space-around',
-                            margin: '10px 10px 60px 10px'
-                        }}
-                    >
-                        <div
-                            style={{
-                                width: '20vw',
-                                display: 'flex',
-                                flexDirection: 'column',
-                                alignItems: 'center'
-                            }}
-                        >
-                            <img
-                                src="static/blockchain.png"
-                                style={{ height: '15vw', filter: 'invert(1)' }}
-                            />
-                            <h3 style={{ color: 'white' }}>
-                                We use the blockchain to provide a trustless platform and ensure
-                                that our platform is secure and transparent. Information that is
-                                stored on the blockchain cannot be tampered with or edited.
-                            </h3>
-                        </div>
-                        <div
-                            style={{
-                                width: '20vw',
-                                display: 'flex',
-                                flexDirection: 'column',
-                                alignItems: 'center'
-                            }}
-                        >
-                            <img
-                                src="static/ai.png"
-                                style={{ height: '15vw', filter: 'invert(1)' }}
-                            />
-                            <h3 style={{ color: 'white' }}>
-                                {' '}
-                                We leverage artificial intelligence to increase the quality of legal
-                                care. Machine learning verifies every user's identity and accurately
-                                matches lawyers with clients.{' '}
-                            </h3>
-                        </div>
-                        <div
-                            style={{
-                                width: '20vw',
-                                display: 'flex',
-                                flexDirection: 'column',
-                                alignItems: 'center'
-                            }}
-                        >
-                            <img
-                                src="static/lawyer.png"
-                                style={{ height: '15vw', filter: 'invert(1)' }}
-                            />
-                            <h3 style={{ color: 'white' }}>
-                                Unlike other solutions, we verify every single lawyer that comes
-                                through our app. As a client, your lawyer stays with you throughout
-                                the entire process.
-                            </h3>
-                        </div>
-                        <div
-                            style={{
-                                width: '20vw',
-                                display: 'flex',
-                                flexDirection: 'column',
-                                alignItems: 'center'
-                            }}
-                        >
-                            <img
-                                src="static/edit.svg"
-                                style={{ height: '15vw', filter: 'invert(1)' }}
-                            />
-                            <h3 style={{ color: 'white' }}>
-                                Our rating system ensures quality lawyers and provides incentives
-                                for good work. Lawyers can use their FairLegal ratings to help with
-                                real world job searches.
-                            </h3>
-                        </div>
-                    </div>
-                </div> */}
                 <div
                     style={{
                         backgroundColor: '#f2f2f2',

@@ -3,40 +3,12 @@ import { connect } from 'react-redux';
 import ChatBox from '../components/ChatBox';
 import axios from 'axios';
 import { Tabs, Radio, Button, Select, Input, Modal } from 'antd';
+import * as types from '../redux/types';
 
 class Inks extends Component {
     static async getInitialProps({ store }) {
-        const inks = [
-            {
-                0: 'ink 1',
-                1: 'description',
-                address: '0x456',
-
-                messages: messageSample
-            },
-            {
-                0: 'ink 2',
-                1: 'description',
-                address: '0x456',
-                messages: messageSample
-            }
-        ];
-        const schools = [
-            {
-                0: 'New School',
-                1: '0x456',
-                address: 'something else',
-                email: 'student@gmail.com'
-            },
-            {
-                0: 'Uni',
-                1: '0x123',
-                address: 'something else',
-                email: 'student@gmail.com'
-            }
-        ];
-
-        return { inks, schools };
+        store.dispatch({ type: types.CHANGE_PAGE, payload: 'i' });
+        console.log('getInitialProps');
     }
 
     state = {
@@ -137,32 +109,45 @@ class Inks extends Component {
     renderSchool() {
         const { Option } = Select;
         return (
-            <div
-                style={{
-                    display: 'flex',
-                    flexDirection: 'row',
-                    justifyContent: 'center'
-                }}
-            >
-                <Select
-                    style={{ width: '300px' }}
-                    placeholder="Select a School"
-                    onChange={val => this.setState({ school: val })}
+            <div>
+                <div
+                    style={{
+                        display: 'flex',
+                        flexDirection: 'row',
+                        justifyContent: 'center',
+                        alignItems: 'center'
+                    }}
                 >
-                    {this.state.schools.map(school => (
-                        <Option value={school.address} style={{ width: '290px' }}>
-                            {' '}
-                            {school[0]}
-                        </Option>
-                    ))}
-                </Select>
-                <Input
-                    style={{ width: '200px' }}
-                    onChange={event => this.setState({ schoolInput: event.target.value })}
-                ></Input>
-                <Button type="primary" onClick={() => console.log('adding school here')}>
-                    Add School
-                </Button>
+                    <Select
+                        style={{ width: '200px', margin: '20px' }}
+                        placeholder="Select a School"
+                        onChange={val => this.setState({ school: val })}
+                    >
+                        {this.state.schools.map(school => (
+                            <Option value={school.address} style={{ width: '190px' }}>
+                                {school[0]}
+                            </Option>
+                        ))}
+                    </Select>
+                    <div>
+                        School Code: {this.state.school ? this.state.school : 'No School Selected'}
+                    </div>
+                </div>
+                <div
+                    style={{
+                        display: 'flex',
+                        flexDirection: 'row',
+                        justifyContent: 'center'
+                    }}
+                >
+                    <Input
+                        style={{ width: '200px', marginRight: '20px' }}
+                        onChange={event => this.setState({ schoolInput: event.target.value })}
+                    ></Input>
+                    <Button type="primary" onClick={this.addSchool}>
+                        Add School
+                    </Button>
+                </div>
             </div>
         );
     }
@@ -279,7 +264,7 @@ class Inks extends Component {
                                     marginTop: '1vw'
                                 }}
                             >
-                                Select an ink in the panel on the right
+                                Select a school and ink in the panel on the right
                             </h4>
                         </TabPane>
                     </Tabs>

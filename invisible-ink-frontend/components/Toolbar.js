@@ -124,7 +124,7 @@ class Toolbar extends Component {
                                 }}
                             >
                                 {this.props.isAuthenticated
-                                    ? this.renderLink('My Inks', 'c', 'copy', '/inks')
+                                    ? this.renderLink('My Inks', 'i', 'copy', '/inks')
                                     : null}
 
                                 {this.renderLink('FAQ', 'q', 'question-circle', '/faq')}
