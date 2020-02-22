@@ -38,9 +38,7 @@ class Register extends Component {
       administrator: this.props.admin
     };
 
-    if (this.props.admin)
-      this.props.registerUser(user, () => Router.pushRoute("/schools"));
-    else this.props.registerUser(user, () => Router.pushRoute("/inks"));
+    this.props.registerUser(user, () => Router.pushRoute("/inks"));
   };
 
   render() {

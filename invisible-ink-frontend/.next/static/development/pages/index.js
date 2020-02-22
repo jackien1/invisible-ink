@@ -28705,7 +28705,7 @@ function (_Component) {
 
 /***/ }),
 
-/***/ 15:
+/***/ 14:
 /*!******************************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fjackieni%2Fdev%2Fhackathon%2Finvisible-ink%2Finvisible-ink-frontend%2Fpages%2Findex.js ***!
   \******************************************************************************************************************************************************************/
@@ -28728,5 +28728,5 @@ module.exports = dll_5f137288facb1107b491;
 
 /***/ })
 
-},[[15,"static/runtime/webpack.js","styles"]]]);
+},[[14,"static/runtime/webpack.js","styles"]]]);
 //# sourceMappingURL=index.js.map

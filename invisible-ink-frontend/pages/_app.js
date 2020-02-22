@@ -2,9 +2,7 @@ import React from "react";
 import { Provider } from "react-redux";
 import App, { Container } from "next/app";
 import withRedux from "next-redux-wrapper";
-//import jwt_decode from 'jwt-decode';
-//import { DefaultSeo } from 'next-seo';
-
+import jwt_decode from "jwt-decode";
 import { Router } from "../routes";
 import { setCurrentUser, logoutUser } from "../redux/actions";
 import { initStore } from "../redux/store";
@@ -24,12 +22,23 @@ export default withRedux(initStore)(
       loading: false
     };
 
+    componentDidMount = () => {
+      if (localStorage.jwtToken) {
+        const decoded = jwt_decode(localStorage.jwtToken);
+        this.props.store.dispatch(setCurrentUser(decoded));
+        const currentTime = Date.now() / 1000;
+        if (decoded.exp < currentTime) {
+          this.props.store.dispatch(logoutUser());
+          window.location.href = "/";
+        }
+      }
+      this.setState({ loading: false });
+    };
+
     render() {
       const { Component, pageProps, store } = this.props;
       return (
         <>
-          {/* <DefaultSeo {...DEFAULT_SEO} /> */}
-
           <Provider store={store}>
             <React.Fragment>
               <Toolbar />
