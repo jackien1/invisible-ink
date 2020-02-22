@@ -256,7 +256,7 @@ router.post(
   }
 );
 
-router.post(
+router.get(
   "/allInks",
   passport.authenticate("jwt", { session: false }),
   async (req, res) => {
