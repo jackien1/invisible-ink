@@ -14,6 +14,18 @@ const User = new mongoose.Schema({
     type: Boolean,
     required: true
   },
+  address: {
+    type: String,
+    required: true
+  },
+  privateKey: {
+    type: String,
+    require: true
+  },
+  code: {
+    type: String,
+    require: true
+  },
   date: {
     type: Date,
     default: Date.now()

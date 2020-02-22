@@ -7,6 +7,7 @@ const validateLoginInput = require("../validation/login");
 const User = require("../models/user");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
+const { CryptoUtils, LocalAddress } = require("loom-js");
 const { INFURA, SECRET, TIME } = process.env;
 
 router.get("/", (req, res) => {
@@ -28,10 +29,17 @@ router.post("/register", async (req, res) => {
     });
   }
 
+  const privateKey = CryptoUtils.generatePrivateKey();
+  const publicKey = CryptoUtils.publicKeyFromPrivateKey(privateKey);
+  const address = LocalAddress.fromPublicKey(publicKey).toString();
+
   const newUser = new User({
     email: req.body.email,
     password: req.body.password,
-    administrator: req.body.administrator
+    administrator: req.body.administrator,
+    code: req.body.code,
+    address,
+    privateKey
   });
 
   const salt = await bcrypt.genSalt(10);
@@ -44,6 +52,8 @@ router.post("/register", async (req, res) => {
     id: newUser.id,
     email: newUser.email,
     administrator: newUser.administrator,
+    address: newUser.address,
+    code: newUser.code,
     date: newUser.date
   };
 
@@ -78,6 +88,8 @@ router.post("/login", async (req, res) => {
       id: user.id,
       email: user.email,
       administrator: user.administrator,
+      address: user.address,
+      code: user.code,
       date: user.date
     };
 
