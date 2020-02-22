@@ -16,7 +16,7 @@ class ChatBox extends Component {
                         this.messageList = div;
                     }}
                 >
-                    {this.props.messages.map(message => {
+                    {/* {this.props.messages.map(message => {
                         return (
                             <div
                                 style={{
@@ -49,7 +49,7 @@ class ChatBox extends Component {
                                 </div>
                             </div>
                         );
-                    })}
+                    })} */}
                 </div>
                 <div
                     style={{
@@ -61,9 +61,9 @@ class ChatBox extends Component {
                 >
                     <Input
                         placeholder="Enter Message"
-                        onChange={event => this.setState({ text: event.target.value })}
+                        onChange={event => this.changeInput(event)}
                     />
-                    <Button onClick={this.handleSubmit}>Submit</Button>
+                    <Button onClick={this.props.handleSubmit}>Submit</Button>
                 </div>
             </div>
         );
