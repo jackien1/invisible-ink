@@ -110,8 +110,19 @@ class Inks extends Component {
     );
   }
 
-  handleSubmit = () => {
-    console.log("handling submit");
+  handleSubmit = async () => {
+    axios.defaults.headers.common["Authorization"] = localStorage.getItem(
+      "jwtToken"
+    );
+
+    await axios({
+      method: "post",
+      url: `${process.env.SERVER_URL}/api/ink/sendMessage`,
+      data: {
+        text: this.state.text,
+        ink: this.state.inks[this.state.highlighted].address
+      }
+    });
   };
 
   addSchool = async () => {
@@ -183,8 +194,8 @@ class Inks extends Component {
             onChange={key => this.setState({ highlighted: key })}
             activeKey={this.state.highlighted}
           >
-            {this.props.inks
-              ? this.props.inks
+            {this.state.inks
+              ? this.state.inks
                   .filter(
                     object =>
                       //   !this.props.user.administrator ||
