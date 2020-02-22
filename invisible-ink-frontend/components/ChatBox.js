@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Input, Button } from 'react';
+import { Input, Button } from 'antd';
 
 class ChatBox extends Component {
     render() {
@@ -10,13 +10,15 @@ class ChatBox extends Component {
                         width: '100%',
                         borderRadius: '20px',
                         height: '50vh',
-                        overflowX: 'scroll'
+                        overflowX: 'scroll',
+                        backgroundColor: '#F2F2F2'
                     }}
                     ref={div => {
                         this.messageList = div;
                     }}
                 >
-                    {/* {this.props.messages.map(message => {
+                    {this.props.messages.map(message => {
+                        console.log(message);
                         return (
                             <div
                                 style={{
@@ -32,8 +34,8 @@ class ChatBox extends Component {
                                     style={{
                                         backgroundColor:
                                             message[0].toLowerCase() == this.props.address
-                                                ? '#10004e'
-                                                : '#EEEEEE',
+                                                ? '#ff8282'
+                                                : '#C2C2C2',
                                         color:
                                             message[0].toLowerCase() == this.props.address
                                                 ? '#FFFFFF'
@@ -49,7 +51,7 @@ class ChatBox extends Component {
                                 </div>
                             </div>
                         );
-                    })} */}
+                    })}
                 </div>
                 <div
                     style={{
@@ -61,7 +63,7 @@ class ChatBox extends Component {
                 >
                     <Input
                         placeholder="Enter Message"
-                        onChange={event => this.changeInput(event)}
+                        onChange={event => this.props.changeInput(event)}
                     />
                     <Button onClick={this.props.handleSubmit}>Submit</Button>
                 </div>
