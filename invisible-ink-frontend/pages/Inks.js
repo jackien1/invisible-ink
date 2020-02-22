@@ -1,15 +1,8 @@
-<<<<<<< HEAD
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import ChatBox from "../components/ChatBox";
-import axios from "axios";
-import { Tabs, TabPane, Button } from "antd";
-=======
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ChatBox from '../components/ChatBox';
+import axios from 'axios';
 import { Tabs, TabPane, Button, Select, Input } from 'antd';
->>>>>>> 58539e0ace180e3b866e27e2bb8a70e184587594
 
 class Inks extends Component {
     static async getInitialProps({ store }) {
@@ -24,40 +17,28 @@ class Inks extends Component {
             }
         ];
         const schools = ['Sage', 'Uni', 'etc...'];
-
-<<<<<<< HEAD
-  state = {
-    text: "",
-    highlighted: "-1",
-    inks: []
-  };
-
-  async componentDidMount() {
-    axios.defaults.headers.common["Authorization"] = localStorage.getItem(
-      "jwtToken"
-    );
-
-    const { data } = await axios({
-      method: "post",
-      url: `${process.env.SERVER_URL}/api/ink/myInks`,
-      data: { code: this.props.user.code }
-    });
-  }
-
-  handleSubmit = () => {
-    console.log("handling submit");
-  };
-=======
-        return { inks, schools };
     }
-
     state = {
         text: '',
         highlighted: '-1',
+        inks: [],
         school: '',
         schoolInput: ''
     };
->>>>>>> 58539e0ace180e3b866e27e2bb8a70e184587594
+
+    async componentDidMount() {
+        axios.defaults.headers.common['Authorization'] = localStorage.getItem('jwtToken');
+
+        const { data } = await axios({
+            method: 'post',
+            url: `${process.env.SERVER_URL}/api/ink/myInks`,
+            data: { code: this.props.user.code }
+        });
+    }
+
+    handleSubmit = () => {
+        console.log('handling submit');
+    };
 
     handleSubmit = () => {
         console.log('handling submit');
@@ -187,16 +168,9 @@ const messageSample = [
     }
 ];
 
-<<<<<<< HEAD
 const mapStateToProps = state => {
-  const { user, isAuthenticated, error } = state.auth;
-  return { user, isAuthenticated, error };
+    const { user, isAuthenticated, error } = state.auth;
+    return { user, isAuthenticated, error };
 };
 
-export default connect(
-  mapStateToProps,
-  null
-)(Inks);
-=======
-export default connect(null, null)(Inks);
->>>>>>> 58539e0ace180e3b866e27e2bb8a70e184587594
+export default connect(mapStateToProps, null)(Inks);

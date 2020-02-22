@@ -13,30 +13,22 @@ class Register extends Component {
         return { admin: query.type === 'admin' };
     }
 
-<<<<<<< HEAD
-  state = {
-    email: "",
-    password: "",
-    confirmPassword: "",
-    schoolCode: ""
-  };
-
-  handleRegister = async () => {
-    const user = {
-      email: this.state.email,
-      password: this.state.password,
-      password_confirm: this.state.confirmPassword,
-      code: this.state.schoolCode,
-      administrator: this.props.admin
-=======
     state = {
         email: '',
         password: '',
         confirmPassword: '',
         schoolCode: ''
->>>>>>> 58539e0ace180e3b866e27e2bb8a70e184587594
     };
 
+    handleRegister = async () => {
+        const user = {
+            email: this.state.email,
+            password: this.state.password,
+            password_confirm: this.state.confirmPassword,
+            code: this.state.schoolCode,
+            administrator: this.props.admin
+        };
+    };
     handleRegister = async () => {
         const user = {
             email: this.state.email,
