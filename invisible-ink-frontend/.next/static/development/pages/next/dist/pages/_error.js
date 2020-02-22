@@ -3685,7 +3685,7 @@ module.exports = (__webpack_require__(/*! dll-reference dll_5f137288facb1107b491
 
 /***/ }),
 
-/***/ 13:
+/***/ 15:
 /*!****************************************************************************************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fnext%2Fdist%2Fpages%2F_error&absolutePagePath=%2FUsers%2Fjackieni%2Fdev%2Fhackathon%2Finvisible-ink%2Finvisible-ink-frontend%2Fnode_modules%2Fnext%2Fdist%2Fpages%2F_error.js ***!
   \****************************************************************************************************************************************************************************************************************************/
@@ -3708,5 +3708,5 @@ module.exports = dll_5f137288facb1107b491;
 
 /***/ })
 
-},[[13,"static/runtime/webpack.js"]]]);
+},[[15,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=_error.js.map
