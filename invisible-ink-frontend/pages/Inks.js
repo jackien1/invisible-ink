@@ -38,31 +38,37 @@ class Inks extends Component {
 
         return { inks, schools };
     }
+
     state = {
         text: '',
         highlighted: '-1',
         inks: [],
         school: '',
-        schoolInput: ''
+        schoolInput: '',
+        schools: []
     };
 
     async componentDidMount() {
         axios.defaults.headers.common['Authorization'] = localStorage.getItem('jwtToken');
 
-        const { data } = await axios({
-            method: 'post',
-            url: `${process.env.SERVER_URL}/api/ink/myInks`,
-            data: { code: this.props.user.code }
-        });
+        if (!this.props.user.administrator) {
+            const { data } = await axios({
+                method: 'post',
+                url: `${process.env.SERVER_URL}/api/ink/myInks`,
+                data: { code: this.props.user.code }
+            });
+
+            this.setState({ inks: data });
+        } else {
+            const { data } = await axios({
+                method: 'get',
+                url: `${process.env.SERVER_URL}/api/ink/getSchools`
+            });
+
+            this.setState({ schools: data });
+            console.log(data);
+        }
     }
-
-    handleSubmit = () => {
-        console.log('handling submit');
-    };
-
-    handleSubmit = () => {
-        console.log('handling submit');
-    };
 
     renderInk() {
         return (
@@ -94,6 +100,34 @@ class Inks extends Component {
         );
     }
 
+    handleSubmit = () => {
+        console.log('handling submit');
+    };
+
+    addSchool = async () => {
+        axios.defaults.headers.common['Authorization'] = localStorage.getItem('jwtToken');
+
+        await axios({
+            method: 'post',
+            url: `${process.env.SERVER_URL}/api/ink/createSchool`,
+            data: { name: this.state.schoolInput }
+        });
+    };
+
+    renderInk() {
+        return (
+            <div style={{ width: '70vw', height: '100%' }}>
+                <h2> What's Wrong?</h2>
+                <ChatBox
+                    messages={messageSample}
+                    address={123}
+                    handleSubmit={this.handleSubmit}
+                    changeInput={event => this.setState({ text: event.target.value })}
+                />
+            </div>
+        );
+    }
+
     renderSchool() {
         const { Option } = Select;
         return (
@@ -103,7 +137,7 @@ class Inks extends Component {
                     placeholder="Select a School"
                     onChange={val => this.setState({ school: val })}
                 >
-                    {this.props.schools.map(school => (
+                    {this.state.schools.map(school => (
                         <Option value={school[1]} style={{ width: '290px' }}>
                             {' '}
                             {school[0]}
@@ -214,6 +248,16 @@ class Inks extends Component {
                         </TabPane>
                     </Tabs>
                 </div>
+                } >
+                <h1
+                    style={{
+                        textAlign: 'center',
+                        width: '100%',
+                        marginTop: '1.5vw'
+                    }}
+                >
+                    Select an Ink
+                </h1>
             </div>
         );
     }
