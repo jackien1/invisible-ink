@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-//import { setCurrentUser, logoutUser, loginUser } from '../redux/actions/auth_actions';
+import { logoutUser, loginUser } from "../redux/actions/auth_actions";
 import { Divider, Icon, Button, Input } from "antd";
 import { Router } from "../routes";
 import axios from "axios";
@@ -22,11 +22,8 @@ class PlayerInfo extends Component {
       email: this.state.email,
       password: this.state.password
     };
-    this.props.loginUser(user, this.callback);
-  };
 
-  callback = () => {
-    Router.push("/cases");
+    this.props.loginUser(user, () => Router.pushRoute("/inks"));
   };
 
   renderNotLoggedIn() {
@@ -134,57 +131,26 @@ class PlayerInfo extends Component {
               fontWeight: "600"
             }}
           >
-            {this.props.user.name}
+            {this.props.user.email}
           </span>
         </div>
 
         <Divider />
 
-        {/* <div
-                    style={{
-                        display: 'flex',
-                        flexDirection: 'column',
-                        justifyContent: 'center',
-                        textAlign: 'center'
-                    }}
-                >
-                    <div>
-                        <span style={{ fontWeight: '600' }}>Dapp Balance:&ensp;</span>{' '}
-                        {formatPrice(this.props.user.dappBalance)}
-                    </div>
-                    <div style={{ marginBottom: '20px' }}>
-                        <span style={{ fontWeight: '600' }}>Ether Balance:&ensp;&nbsp;</span>{' '}
-                        {formatPrice(this.props.user.ethBalance)}
-                    </div>
-
-                    <div style={{ marginBottom: '20px' }}>
-                        <span style={{ fontWeight: '600' }}>Dapp Address:&ensp;&nbsp;</span>
-                        <br />
-                        <span style={{ fontSize: '90% ' }}>{this.props.user.address}</span>
-                    </div>
-
-                    <div style={{ marginBottom: '20px' }}>
-                        <span style={{ fontWeight: '600' }}>Ether Address:&ensp;&nbsp;</span>
-                        <br />
-                        <span style={{ fontSize: '90% ' }}>{this.props.user.ethAddress}</span>
-                    </div>
-
-                    <span style={{ fontWeight: '500', fontSize: '120%' }}>Add Ether</span>
-                    <div
-                        style={{
-                            display: 'flex',
-                            flexDirection: 'row'
-                        }}
-                    >
-                        <EtherSelector
-                            onBuyChange={event => this.setState({ value: event })}
-                            value={this.state.value}
-                            onDenominationChange={event => this.setState({ denom: event })}
-                            wide
-                        />
-                        <Button onClick={this.addEther} icon="check" />
-                    </div>
-                </div> */}
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            textAlign: "center"
+          }}
+        >
+          <div style={{ marginBottom: "20px" }}>
+            <span style={{ fontWeight: "600" }}> Address:&ensp;&nbsp;</span>
+            <br />
+            <span style={{ fontSize: "90% " }}>{this.props.user.address}</span>
+          </div>
+        </div>
 
         <div
           style={{
@@ -231,11 +197,10 @@ class PlayerInfo extends Component {
 
 const mapStateToProps = state => {
   const { user, isAuthenticated, error } = state.auth;
-  //const { error, text } = state.errors;
   return { user, isAuthenticated, error };
 };
 
 export default connect(
   mapStateToProps,
-  null
+  { loginUser, logoutUser }
 )(PlayerInfo);

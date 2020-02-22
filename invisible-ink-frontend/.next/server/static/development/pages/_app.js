@@ -125,8 +125,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_10__);
 /* harmony import */ var _styles_less__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../styles.less */ "./styles.less");
 /* harmony import */ var _styles_less__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_styles_less__WEBPACK_IMPORTED_MODULE_11__);
+<<<<<<< HEAD
+=======
 
 
+>>>>>>> 8a89e8a6a5d0af6ea59a98efa63731ce0ef9c3fe
+
+
+var _jsxFileName = "/Users/jackieni/dev/hackathon/invisible-ink/invisible-ink-frontend/components/Toolbar.js";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement;
 
 
 var _jsxFileName = "/Users/timg/Documents/GitHub/invisible-ink/invisible-ink-frontend/components/Toolbar.js";
@@ -432,30 +440,47 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_6__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-redux */ "react-redux");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_7__);
+<<<<<<< HEAD
 /* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../routes */ "./routes.js");
 /* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_routes__WEBPACK_IMPORTED_MODULE_8__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! axios */ "axios");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_9__);
 /* harmony import */ var web3__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! web3 */ "web3");
 /* harmony import */ var web3__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(web3__WEBPACK_IMPORTED_MODULE_10__);
+=======
+/* harmony import */ var _redux_actions_auth_actions__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../redux/actions/auth_actions */ "./redux/actions/auth_actions.js");
+/* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../routes */ "./routes.js");
+/* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_routes__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! axios */ "axios");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var web3__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! web3 */ "web3");
+/* harmony import */ var web3__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(web3__WEBPACK_IMPORTED_MODULE_11__);
+>>>>>>> 8a89e8a6a5d0af6ea59a98efa63731ce0ef9c3fe
 
 
 
 
 
 
+<<<<<<< HEAD
 var _jsxFileName = "/Users/timg/Documents/GitHub/invisible-ink/invisible-ink-frontend/components/UserInfo.js";
+=======
+var _jsxFileName = "/Users/jackieni/dev/hackathon/invisible-ink/invisible-ink-frontend/components/UserInfo.js";
+>>>>>>> 8a89e8a6a5d0af6ea59a98efa63731ce0ef9c3fe
 var __jsx = react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement;
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 
- //import { setCurrentUser, logoutUser, loginUser } from '../redux/actions/auth_actions';
 
 
 
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 8a89e8a6a5d0af6ea59a98efa63731ce0ef9c3fe
 class PlayerInfo extends react__WEBPACK_IMPORTED_MODULE_6__["Component"] {
   constructor(...args) {
     super(...args);
@@ -475,11 +500,15 @@ class PlayerInfo extends react__WEBPACK_IMPORTED_MODULE_6__["Component"] {
         email: this.state.email,
         password: this.state.password
       };
+<<<<<<< HEAD
       this.props.loginUser(user, this.callback);
     });
 
     _defineProperty(this, "callback", () => {
       _routes__WEBPACK_IMPORTED_MODULE_8__["Router"].push("/cases");
+=======
+      this.props.loginUser(user, () => _routes__WEBPACK_IMPORTED_MODULE_9__["Router"].pushRoute("/inks"));
+>>>>>>> 8a89e8a6a5d0af6ea59a98efa63731ce0ef9c3fe
     });
 
     _defineProperty(this, "links", [{
@@ -501,7 +530,7 @@ class PlayerInfo extends react__WEBPACK_IMPORTED_MODULE_6__["Component"] {
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 35
+        lineNumber: 32
       },
       __self: this
     }, __jsx("div", {
@@ -513,13 +542,13 @@ class PlayerInfo extends react__WEBPACK_IMPORTED_MODULE_6__["Component"] {
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 42
+        lineNumber: 39
       },
       __self: this
     }, __jsx("h2", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 50
+        lineNumber: 47
       },
       __self: this
     }, " Log In "), __jsx(antd_lib_input__WEBPACK_IMPORTED_MODULE_5___default.a, {
@@ -532,7 +561,7 @@ class PlayerInfo extends react__WEBPACK_IMPORTED_MODULE_6__["Component"] {
       }),
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 51
+        lineNumber: 48
       },
       __self: this
     }), __jsx(antd_lib_input__WEBPACK_IMPORTED_MODULE_5___default.a, {
@@ -543,7 +572,7 @@ class PlayerInfo extends react__WEBPACK_IMPORTED_MODULE_6__["Component"] {
       }),
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 60
+        lineNumber: 57
       },
       __self: this
     }), __jsx(antd_lib_button__WEBPACK_IMPORTED_MODULE_3___default.a, {
@@ -555,7 +584,7 @@ class PlayerInfo extends react__WEBPACK_IMPORTED_MODULE_6__["Component"] {
       loading: this.state.loading,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 69
+        lineNumber: 66
       },
       __self: this
     }, "Log In"), this.props.error ? __jsx("h3", {
@@ -566,40 +595,52 @@ class PlayerInfo extends react__WEBPACK_IMPORTED_MODULE_6__["Component"] {
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 79
+        lineNumber: 76
       },
       __self: this
     }, "Login Error!") : null), __jsx(antd_lib_divider__WEBPACK_IMPORTED_MODULE_1___default.a, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 91
+        lineNumber: 88
       },
       __self: this
     }), __jsx(antd_lib_button__WEBPACK_IMPORTED_MODULE_3___default.a, {
       style: {
         margin: "0px 20px 0 20px"
       },
+<<<<<<< HEAD
       onClick: () => _routes__WEBPACK_IMPORTED_MODULE_8__["Router"].push("/register/student"),
+=======
+      onClick: () => _routes__WEBPACK_IMPORTED_MODULE_9__["Router"].push("/register/student"),
+>>>>>>> 8a89e8a6a5d0af6ea59a98efa63731ce0ef9c3fe
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 92
+        lineNumber: 89
       },
       __self: this
     }, "Register (Student)"), __jsx(antd_lib_button__WEBPACK_IMPORTED_MODULE_3___default.a, {
       style: {
         margin: "0px 20px 0 20px"
       },
+<<<<<<< HEAD
       onClick: () => _routes__WEBPACK_IMPORTED_MODULE_8__["Router"].push("/register/admin"),
+=======
+      onClick: () => _routes__WEBPACK_IMPORTED_MODULE_9__["Router"].push("/register/admin"),
+>>>>>>> 8a89e8a6a5d0af6ea59a98efa63731ce0ef9c3fe
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 98
+        lineNumber: 95
       },
       __self: this
     }, "Register (Administrator)"));
   }
 
   renderLoggedIn() {
+<<<<<<< HEAD
     const web3 = new web3__WEBPACK_IMPORTED_MODULE_10___default.a("https://rinkeby.infura.io/v3/6a20903e63ec4a96a771a79800a1a1d4");
+=======
+    const web3 = new web3__WEBPACK_IMPORTED_MODULE_11___default.a("https://rinkeby.infura.io/v3/6a20903e63ec4a96a771a79800a1a1d4");
+>>>>>>> 8a89e8a6a5d0af6ea59a98efa63731ce0ef9c3fe
 
     const full = __jsx("div", {
       style: {
@@ -610,7 +651,7 @@ class PlayerInfo extends react__WEBPACK_IMPORTED_MODULE_6__["Component"] {
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 114
+        lineNumber: 111
       },
       __self: this
     }, __jsx("div", {
@@ -621,7 +662,7 @@ class PlayerInfo extends react__WEBPACK_IMPORTED_MODULE_6__["Component"] {
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 122
+        lineNumber: 119
       },
       __self: this
     }, __jsx("span", {
@@ -630,7 +671,7 @@ class PlayerInfo extends react__WEBPACK_IMPORTED_MODULE_6__["Component"] {
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 129
+        lineNumber: 126
       },
       __self: this
     }, " Signed in as "), __jsx("span", {
@@ -641,16 +682,65 @@ class PlayerInfo extends react__WEBPACK_IMPORTED_MODULE_6__["Component"] {
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 130
+        lineNumber: 127
       },
       __self: this
+<<<<<<< HEAD
     }, this.props.user.name)), __jsx(antd_lib_divider__WEBPACK_IMPORTED_MODULE_1___default.a, {
+=======
+    }, this.props.user.email)), __jsx(antd_lib_divider__WEBPACK_IMPORTED_MODULE_1___default.a, {
+>>>>>>> 8a89e8a6a5d0af6ea59a98efa63731ce0ef9c3fe
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 141
+        lineNumber: 138
       },
       __self: this
     }), __jsx("div", {
+      style: {
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        textAlign: "center"
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 140
+      },
+      __self: this
+    }, __jsx("div", {
+      style: {
+        marginBottom: "20px"
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 148
+      },
+      __self: this
+    }, __jsx("span", {
+      style: {
+        fontWeight: "600"
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 149
+      },
+      __self: this
+    }, " Address:\u2002\xA0"), __jsx("br", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 150
+      },
+      __self: this
+    }), __jsx("span", {
+      style: {
+        fontSize: "90% "
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 151
+      },
+      __self: this
+    }, this.props.user.address))), __jsx("div", {
       style: {
         display: "flex",
         flexWrap: "wrap",
@@ -658,7 +748,7 @@ class PlayerInfo extends react__WEBPACK_IMPORTED_MODULE_6__["Component"] {
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 189
+        lineNumber: 155
       },
       __self: this
     }, this.links.map(link => __jsx(antd_lib_button__WEBPACK_IMPORTED_MODULE_3___default.a, {
@@ -670,19 +760,23 @@ class PlayerInfo extends react__WEBPACK_IMPORTED_MODULE_6__["Component"] {
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 197
+        lineNumber: 163
       },
       __self: this
     }, link.text))), __jsx(antd_lib_button__WEBPACK_IMPORTED_MODULE_3___default.a, {
       icon: "logout",
+<<<<<<< HEAD
       onClick: () => this.props.logoutUser(() => _routes__WEBPACK_IMPORTED_MODULE_8__["Router"].push("/")),
+=======
+      onClick: () => this.props.logoutUser(() => _routes__WEBPACK_IMPORTED_MODULE_9__["Router"].push("/")),
+>>>>>>> 8a89e8a6a5d0af6ea59a98efa63731ce0ef9c3fe
       type: "danger",
       style: {
         width: "220px"
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 206
+        lineNumber: 172
       },
       __self: this
     }, "Logout"));
@@ -701,8 +795,7 @@ const mapStateToProps = state => {
     user,
     isAuthenticated,
     error
-  } = state.auth; //const { error, text } = state.errors;
-
+  } = state.auth;
   return {
     user,
     isAuthenticated,
@@ -710,7 +803,14 @@ const mapStateToProps = state => {
   };
 };
 
+<<<<<<< HEAD
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_7__["connect"])(mapStateToProps, null)(PlayerInfo));
+=======
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_7__["connect"])(mapStateToProps, {
+  loginUser: _redux_actions_auth_actions__WEBPACK_IMPORTED_MODULE_8__["loginUser"],
+  logoutUser: _redux_actions_auth_actions__WEBPACK_IMPORTED_MODULE_8__["logoutUser"]
+})(PlayerInfo));
+>>>>>>> 8a89e8a6a5d0af6ea59a98efa63731ce0ef9c3fe
 
 /***/ }),
 
@@ -742,7 +842,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_5__);
 
 
+<<<<<<< HEAD
 var _jsxFileName = "/Users/timg/Documents/GitHub/invisible-ink/invisible-ink-frontend/components/functions.js";
+=======
+var _jsxFileName = "/Users/jackieni/dev/hackathon/invisible-ink/invisible-ink-frontend/components/functions.js";
+>>>>>>> 8a89e8a6a5d0af6ea59a98efa63731ce0ef9c3fe
 var __jsx = react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement;
 
 
@@ -3051,11 +3155,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_app__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_app__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var next_redux_wrapper__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next-redux-wrapper */ "next-redux-wrapper");
 /* harmony import */ var next_redux_wrapper__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_redux_wrapper__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../routes */ "./routes.js");
-/* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_routes__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _redux_actions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../redux/actions */ "./redux/actions/index.js");
-/* harmony import */ var _redux_store__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../redux/store */ "./redux/store.js");
-/* harmony import */ var _components_Toolbar__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/Toolbar */ "./components/Toolbar.js");
+/* harmony import */ var jwt_decode__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! jwt-decode */ "jwt-decode");
+/* harmony import */ var jwt_decode__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(jwt_decode__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../routes */ "./routes.js");
+/* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_routes__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _redux_actions__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../redux/actions */ "./redux/actions/index.js");
+/* harmony import */ var _redux_store__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../redux/store */ "./redux/store.js");
+/* harmony import */ var _components_Toolbar__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/Toolbar */ "./components/Toolbar.js");
 var _temp,
     _jsxFileName = "/Users/timg/Documents/GitHub/invisible-ink/invisible-ink-frontend/pages/_app.js";
 
@@ -3068,19 +3174,35 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
- //import jwt_decode from 'jwt-decode';
-//import { DefaultSeo } from 'next-seo';
 
 
 
 
 
-/* harmony default export */ __webpack_exports__["default"] = (next_redux_wrapper__WEBPACK_IMPORTED_MODULE_3___default()(_redux_store__WEBPACK_IMPORTED_MODULE_6__["initStore"])((_temp = class MyApp extends next_app__WEBPACK_IMPORTED_MODULE_2___default.a {
+
+/* harmony default export */ __webpack_exports__["default"] = (next_redux_wrapper__WEBPACK_IMPORTED_MODULE_3___default()(_redux_store__WEBPACK_IMPORTED_MODULE_7__["initStore"])((_temp = class MyApp extends next_app__WEBPACK_IMPORTED_MODULE_2___default.a {
   constructor(...args) {
     super(...args);
 
     _defineProperty(this, "state", {
       loading: false
+    });
+
+    _defineProperty(this, "componentDidMount", () => {
+      if (localStorage.jwtToken) {
+        const decoded = jwt_decode__WEBPACK_IMPORTED_MODULE_4___default()(localStorage.jwtToken);
+        this.props.store.dispatch(Object(_redux_actions__WEBPACK_IMPORTED_MODULE_6__["setCurrentUser"])(decoded));
+        const currentTime = Date.now() / 1000;
+
+        if (decoded.exp < currentTime) {
+          this.props.store.dispatch(Object(_redux_actions__WEBPACK_IMPORTED_MODULE_6__["logoutUser"])());
+          window.location.href = "/";
+        }
+      }
+
+      this.setState({
+        loading: false
+      });
     });
   }
 
@@ -3104,25 +3226,25 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       store: store,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 33
+        lineNumber: 42
       },
       __self: this
     }, __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 34
+        lineNumber: 43
       },
       __self: this
-    }, __jsx(_components_Toolbar__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    }, __jsx(_components_Toolbar__WEBPACK_IMPORTED_MODULE_8__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 35
+        lineNumber: 44
       },
       __self: this
     }), __jsx(Component, _extends({}, pageProps, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 36
+        lineNumber: 45
       },
       __self: this
     })))));
@@ -3190,7 +3312,7 @@ const registerUser = (user, callback) => {
     try {
       const res = await axios__WEBPACK_IMPORTED_MODULE_1___default()({
         method: 'post',
-        url: `${process.env.SERVER_URL}/api/auth/register`,
+        url: `${"http://localhost:5000"}/api/auth/register`,
         data: _objectSpread({}, user)
       });
       console.log('success');
@@ -3217,7 +3339,7 @@ const loginUser = (user, callback) => async dispatch => {
   try {
     const res = await axios__WEBPACK_IMPORTED_MODULE_1___default()({
       method: 'post',
-      url: `${process.env.SERVER_URL}/api/auth/login`,
+      url: `${"http://localhost:5000"}/api/auth/login`,
       data: _objectSpread({}, user)
     });
     const {
