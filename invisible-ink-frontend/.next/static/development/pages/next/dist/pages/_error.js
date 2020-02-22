@@ -3121,10 +3121,10 @@ for (var i = 0; i < DOMIterables.length; i++) {
 
 /***/ }),
 
-/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fnext%2Fdist%2Fpages%2F_error&absolutePagePath=%2FUsers%2Fjackieni%2Fdev%2Fhackathon%2Finvisible-ink%2Finvisible-ink-frontend%2Fnode_modules%2Fnext%2Fdist%2Fpages%2F_error.js!./":
-/*!************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fnext%2Fdist%2Fpages%2F_error&absolutePagePath=%2FUsers%2Fjackieni%2Fdev%2Fhackathon%2Finvisible-ink%2Finvisible-ink-frontend%2Fnode_modules%2Fnext%2Fdist%2Fpages%2F_error.js ***!
-  \************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fnext%2Fdist%2Fpages%2F_error&absolutePagePath=%2FUsers%2Ftimg%2FDocuments%2FGitHub%2Finvisible-ink%2Finvisible-ink-frontend%2Fnode_modules%2Fnext%2Fdist%2Fpages%2F_error.js!./":
+/*!***********************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fnext%2Fdist%2Fpages%2F_error&absolutePagePath=%2FUsers%2Ftimg%2FDocuments%2FGitHub%2Finvisible-ink%2Finvisible-ink-frontend%2Fnode_modules%2Fnext%2Fdist%2Fpages%2F_error.js ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -3685,14 +3685,14 @@ module.exports = (__webpack_require__(/*! dll-reference dll_5f137288facb1107b491
 
 /***/ }),
 
-/***/ 7:
-/*!****************************************************************************************************************************************************************************************************************************!*\
-  !*** multi next-client-pages-loader?page=%2Fnext%2Fdist%2Fpages%2F_error&absolutePagePath=%2FUsers%2Fjackieni%2Fdev%2Fhackathon%2Finvisible-ink%2Finvisible-ink-frontend%2Fnode_modules%2Fnext%2Fdist%2Fpages%2F_error.js ***!
-  \****************************************************************************************************************************************************************************************************************************/
+/***/ 13:
+/*!***************************************************************************************************************************************************************************************************************************!*\
+  !*** multi next-client-pages-loader?page=%2Fnext%2Fdist%2Fpages%2F_error&absolutePagePath=%2FUsers%2Ftimg%2FDocuments%2FGitHub%2Finvisible-ink%2Finvisible-ink-frontend%2Fnode_modules%2Fnext%2Fdist%2Fpages%2F_error.js ***!
+  \***************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Fnext%2Fdist%2Fpages%2F_error&absolutePagePath=%2FUsers%2Fjackieni%2Fdev%2Fhackathon%2Finvisible-ink%2Finvisible-ink-frontend%2Fnode_modules%2Fnext%2Fdist%2Fpages%2F_error.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fnext%2Fdist%2Fpages%2F_error&absolutePagePath=%2FUsers%2Fjackieni%2Fdev%2Fhackathon%2Finvisible-ink%2Finvisible-ink-frontend%2Fnode_modules%2Fnext%2Fdist%2Fpages%2F_error.js!./");
+module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Fnext%2Fdist%2Fpages%2F_error&absolutePagePath=%2FUsers%2Ftimg%2FDocuments%2FGitHub%2Finvisible-ink%2Finvisible-ink-frontend%2Fnode_modules%2Fnext%2Fdist%2Fpages%2F_error.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fnext%2Fdist%2Fpages%2F_error&absolutePagePath=%2FUsers%2Ftimg%2FDocuments%2FGitHub%2Finvisible-ink%2Finvisible-ink-frontend%2Fnode_modules%2Fnext%2Fdist%2Fpages%2F_error.js!./");
 
 
 /***/ }),
@@ -3708,5 +3708,5 @@ module.exports = dll_5f137288facb1107b491;
 
 /***/ })
 
-},[[7,"static/runtime/webpack.js"]]]);
+},[[13,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=_error.js.map

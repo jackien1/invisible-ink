@@ -3,5 +3,5 @@ module.exports = routes()
     .add('/', 'index')
     .add('/register/:type', 'Register')
     .add('/faq', 'FAQPage')
-    .add('/cases', 'AdminCases')
+    .add('/cases', 'Cases')
     .add('/case', 'Case');

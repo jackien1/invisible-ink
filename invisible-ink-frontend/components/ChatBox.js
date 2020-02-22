@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Input, Button } from 'react';
+import { Input, Button } from 'antd';
 
 class ChatBox extends Component {
     render() {
@@ -10,13 +10,15 @@ class ChatBox extends Component {
                         width: '100%',
                         borderRadius: '20px',
                         height: '50vh',
-                        overflowX: 'scroll'
+                        overflowX: 'scroll',
+                        backgroundColor: 'blue'
                     }}
                     ref={div => {
                         this.messageList = div;
                     }}
                 >
-                    {/* {this.props.messages.map(message => {
+                    {this.props.messages.map(message => {
+                        console.log(message);
                         return (
                             <div
                                 style={{
@@ -49,7 +51,7 @@ class ChatBox extends Component {
                                 </div>
                             </div>
                         );
-                    })} */}
+                    })}
                 </div>
                 <div
                     style={{
